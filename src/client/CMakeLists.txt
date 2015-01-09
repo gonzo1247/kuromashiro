@@ -12,6 +12,7 @@
 
 file(GLOB_RECURSE sources_client_f File/*.cpp File/*.h)
 file(GLOB_RECURSE sources_client_l Login/*.cpp Login/*.h)
+file(GLOB_RECURSE sources_client_n Network/*.cpp Network/*.h)
 file(GLOB_RECURSE sources_client_resource resource/*.cp resource/*.h)
 file(GLOB sources_localdir *.cpp *.h)
 
@@ -19,11 +20,13 @@ set(client_SRCS
   ${client_SRCS}
   ${sources_client_f}
   ${sources_client_l}
+  ${sources_client_n}
 )
 
 set(main_SRCS
 ${sources_client_f}
 ${sources_client_l}
+${sources_client_n}
 ${sources_resource}
 ${sources_localdir}
 resource/bild3.bmp
@@ -41,6 +44,7 @@ main.cpp
 add_subdirectory(Login)
 add_subdirectory(File)
 add_subdirectory(resource)
+add_subdirectory(Network)
 
 
 
@@ -77,13 +81,20 @@ INCLUDE_DIRECTORIES(
   ${CMAKE_CURRENT_SOURCE_DIR}/client/resource
   ${CMAKE_CURRENT_SOURCE_DIR}/client/File
   ${CMAKE_CURRENT_SOURCE_DIR}/client/Login
+  ${CMAKE_CURRENT_SOURCE_DIR}/client/Network
 )
 
 ADD_LIBRARY(client
-File/CFile.cpp
-File/CFile.h
-Login/CLogin.cpp
-Login/CLogin.h)
+   File/CFile.cpp
+   File/CFile.h
+   Login/CLogin.cpp
+   Login/CLogin.h
+   Network/CNetwork.h
+   Network/CNetwork.cpp
+   Network/CSocket.h
+   Network/CSocket.cpp
+   
+)
 
 
 

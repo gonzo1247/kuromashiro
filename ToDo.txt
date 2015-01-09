@@ -1,0 +1,37 @@
+################################
+## ToDO 2015/01/06
+################################
+-------------------
+Client Programm
+-------------------
+Klasse CFile erweitern um folgende Punkte:
+
+Schreiben der Einstellungen in setting Datei
+Auslesen der Einstellungen und Schreiben
+in das Menü der Optionen
+Basis Einstellungen erstellen beim ersten starten des Programmes
+
+Klasse CLogin:
+
+Funktionen umschreiben, Login daten verschlüsseln und entsprechend 
+innerhalb der Login Klasse vorbereiten auf übertragung.
+
+Klasse CNetwork:
+
+Funktionen einbauen für verbindung herstellen mit Server.
+Login Daten zum Überprüfen an Server schicken.
+
+Generell:
+
+Grafik Engine raussuchen um damit zu Arbeiten und die Fenster basis
+darauf aufzubauen.
+
+
+
+#######################
+
+----------------
+Server Programm
+----------------
+
+folgt.

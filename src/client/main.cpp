@@ -2,13 +2,12 @@
 #define UNICODE
 #endif 
 
-
 #include <windows.h>
+#include <WinUser.h>
 #include "resource.h"
 #include "File\CFile.h"
 #include "Login\CLogin.h"
 #include "resource.h"
-
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 LRESULT CALLBACK ChildProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -45,7 +44,6 @@ HWND hMusic, hGraphic, hFullscr;
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow)
 {
-
 //	HWND hwnd;
 	MSG msg;
 
@@ -339,7 +337,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 						ShowWindow(hChild, SW_SHOW);
 
-                        DialogBox(((LPCREATESTRUCT)lParam)->hInstance,//(HINSTANCE)GetWindowLong(hwnd, GWL_HINSTANCE),
+                        DialogBox(((LPCREATESTRUCT)lParam)->hInstance,// (HINSTANCE)GetWindowLong(hwnd, GWL_HINSTANCE),
                             MAKEINTRESOURCE(IDD_DIALOG1),
                             hwnd,
                             (DLGPROC)CheckRadioProc);
@@ -472,6 +470,7 @@ LRESULT CALLBACK ChildProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		case WM_SIZE:
 			MoveWindow(hChild, 375, 200, 450, 450, TRUE);
 			MoveWindow(hMusic, 400, 200, 70, 30, TRUE);
+
 
         case WM_KEYDOWN:
             switch (wParam)
