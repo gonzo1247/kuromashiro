@@ -1,0 +1,92 @@
+
+#
+# This file is free software; as a special exception the author gives
+# unlimited permission to copy and/or distribute it, with or without
+# modifications, as long as this notice is preserved.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+add_subdirectory(client)
+
+file(GLOB_RECURSE sources_client_f client/File/*.cpp client/File/*.h)
+file(GLOB_RECURSE sources_client_l client/Login/*.cpp client/Login/*.h)
+file(GLOB sources_localdir *.cpp *.h)
+
+#set(client_SRCS
+#	˜{client_SRCS}
+#	${sources_client_f}
+#	${sources_client_l}
+#)
+
+
+
+if (WIN32)
+if (MSVC)
+set(main_SRCS
+	˜{main_SRCS}
+	kuromashiro.rc
+)
+endif ()
+endif ()
+
+
+set(main_SRCS
+${sources_client_f}
+${sources_client_l}
+bild3.bmp
+bild4.bmp
+bild5.bmp
+bitmap1.bmp
+bitmap2.bmp
+icon1.ico
+kuromashiro.aps
+kuromashiro.rc
+main.cpp
+resource.h
+)
+
+ADD_LIBRARY(main
+bild3.bmp
+bild4.bmp
+bild5.bmp
+bitmap1.bmp
+bitmap2.bmp
+icon1.ico
+kuromashiro.aps
+kuromashiro.rc
+main.cpp
+resource.h)
+INCLUDE_DIRECTORIES(
+  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_CURRENT_SOURCE_DIR}/client
+  ${CMAKE_CURRENT_SOURCE_DIR}/client/File
+  ${CMAKE_CURRENT_SOURCE_DIR}/client/Login
+)
+
+
+
+
+add_executable(kuromashiro
+bild3.bmp
+bild4.bmp
+bild5.bmp
+bitmap1.bmp
+bitmap2.bmp
+icon1.ico
+kuromashiro.aps
+kuromashiro.rc
+main.cpp
+resource.h
+client/Login/CLogin.h
+client/Login/CLogin.cpp
+client/File/CFile.h
+client/File/CFile.cpp
+
+
+)
+
+
+message ("    -> Prepared: src")
+
