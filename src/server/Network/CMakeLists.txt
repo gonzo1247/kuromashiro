@@ -8,9 +8,13 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-add_subdirectory(client)
-add_subdirectory(server)
 
 
-message ("   -> Prepared: src")
+set(file_STAT_SRCS
+  ${file_STAT_SRCS}
+  Network/CSocket.cpp
+)
+
+
+message("   -> Prepared: Server_Network")
 
